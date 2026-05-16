@@ -7,7 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <style>
-        /* (même CSS que précédemment – gardez votre version) */
+        /* --- CSS identique à votre version --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif; background: #eef2f7; padding: 24px 20px; color: #1e293b; }
         .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 24px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15); overflow: hidden; }
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <!-- Filtres (même structure que votre code) -->
+    <!-- Filtres -->
     <div class="filter-section"><div class="filter-group"><span class="filter-label">🟣 EPL3</span><button class="filter-btn" data-filter="epl3">EPL3</button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL3" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL3" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL3" data-action="add">➕ Ajouter</button></div></div></div>
     <div class="filter-section"><div class="filter-group"><span class="filter-label">🎓 EPL4</span><button class="filter-btn" data-filter="epl4_Alpha">🔵 Alpha <span id="e4AlphaCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL4" data-brigade="Alpha" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Alpha" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Alpha" data-action="add">➕ Ajouter</button></div></div><div class="filter-group"><button class="filter-btn" data-filter="epl4_Bravo">🟢 Bravo <span id="e4BravoCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL4" data-brigade="Bravo" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Bravo" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Bravo" data-action="add">➕ Ajouter</button></div></div><div class="filter-group"><button class="filter-btn" data-filter="epl4_Charlie">🟡 Charlie <span id="e4CharlieCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL4" data-brigade="Charlie" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Charlie" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Charlie" data-action="add">➕ Ajouter</button></div></div><div class="filter-group"><button class="filter-btn" data-filter="epl4_Delta">🔴 Delta <span id="e4DeltaCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL4" data-brigade="Delta" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Delta" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL4" data-brigade="Delta" data-action="add">➕ Ajouter</button></div></div></div>
     <div class="filter-section"><div class="filter-group"><span class="filter-label">✈️ EPL5</span><button class="filter-btn" data-filter="epl5_Alpha">🔵 Alpha <span id="e5AlphaCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL5" data-brigade="Alpha" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Alpha" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Alpha" data-action="add">➕ Ajouter</button></div></div><div class="filter-group"><button class="filter-btn" data-filter="epl5_Bravo">🟢 Bravo <span id="e5BravoCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL5" data-brigade="Bravo" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Bravo" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Bravo" data-action="add">➕ Ajouter</button></div></div><div class="filter-group"><button class="filter-btn" data-filter="epl5_Charlie">🟡 Charlie <span id="e5CharlieCount" class="filter-count">0</span></button><div class="brigade-actions"><button class="icon-btn" data-grade="EPL5" data-brigade="Charlie" data-action="pres-all">✅ Tous présents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Charlie" data-action="abs-all">❌ Tous absents</button><button class="icon-btn" data-grade="EPL5" data-brigade="Charlie" data-action="add">➕ Ajouter</button></div></div></div>
@@ -128,7 +128,7 @@
 
 <script>
     (function() {
-        // VOS CLÉS FIREBASE (déjà présentes)
+        // Configuration Firebase (à remplacer par vos propres clés si besoin)
         const firebaseConfig = {
             apiKey: "AIzaSyCZkaRlj0pplwLwjihsJEAQUPZ5QZKPQoo",
             authDomain: "cipl-sync.firebaseapp.com",
@@ -138,10 +138,8 @@
             appId: "1:795475932370:web:aa2a617439c09b20f1a90b"
         };
 
-        // Initialisation Firebase
         if (typeof firebase === 'undefined') {
             document.getElementById("syncIndicator").innerHTML = "❌ Firebase SDK non chargé";
-            console.error("Firebase SDK not loaded");
             return;
         }
         let app;
@@ -317,21 +315,109 @@
             }
         }
 
+        // ==================== DONNÉES COMPLÈTES DES ÉLÈVES ====================
         async function initializeDataIfEmpty() {
             const snapshot = await studentsCollection.limit(1).get();
             if (!snapshot.empty) return;
             console.log("Base vide, création des données initiales...");
-            // Données identiques à votre code (je les ai raccourcies ici pour la lisibilité, mais elles sont complètes dans votre version)
-            // ... (je conserve vos listes exactes, mais pour la réponse je les ai gardées identiques à votre code)
-            // En pratique, gardez exactement les mêmes données que vous aviez.
-            // Je ne les répète pas ici pour ne pas alourdir, mais votre code initial les contenait.
-            // Assurez-vous que les listes EPL4/EPL5 sont bien présentes (elles l'étaient dans votre code).
-            // Si vous utilisez ce bloc de correction, recopiez les tableaux depuis votre version.
-            // J'exécute seulement la logique :
+
+            // EPL3 (18 élèves)
+            const epl3Data = [
+                {nom:"ACHAHBOUNE", prenom:"MOHAMMED AMINE"},{nom:"CHIHAB", prenom:"ESSAFI"},
+                {nom:"EL FASSI EL FIHRI", prenom:"MOHAMED"},{nom:"EL MAACHI", prenom:"HASSAN"},
+                {nom:"FOURARI", prenom:"YOUSSEF"},{nom:"HASSOUN", prenom:"AYA"},
+                {nom:"KASSID", prenom:"YASSINE"},{nom:"KHABOUSS", prenom:"YAHIA"},
+                {nom:"KIKER", prenom:"ABDERAHMAN"},{nom:"MEZRITI", prenom:"HOUDA"},
+                {nom:"NAJIH", prenom:"SAAD"},{nom:"NAKOURI", prenom:"MOHAMMED"},
+                {nom:"NASSIH", prenom:"SALAHEDDINE"},{nom:"OUCHALA", prenom:"OUSSAMA"},
+                {nom:"RAMDANI", prenom:"IKRAM"},{nom:"REMMAN", prenom:"SALIM"},
+                {nom:"ZEJLI", prenom:"LAMIAE"},{nom:"ZOUHIR", prenom:"RACHID"}
+            ];
+
+            // EPL4 Alpha (23)
+            const e4Alpha = [
+                ["BABALAHCEN","MOHAMED"],["BENALI","ANAS"],["BOUALLAGA","HAJAR"],["BOUZEGGAR","ADAM"],["DAOUDI","ACHRAF"],["EL BACHIRI","KHALIL"],["EL OMARI","NISRINE"],["EL KHAL","HATIM"],["EZ-ZAHOURI","AYMANE"],["GUITAOUI","AYA"],["HADAR","AHMED"],["KARMOUCHI","HIND"],["KAROUCHI","SALAHEDDINE"],["KASSBI","MOUAD"],["MEHNI","FATIMA EZZAHRA"],["MOUNAZIH","ILYASSE"],["NACIRI","SOUHAYLA"],["OUAKOUR","AYMANE"],["OUBENAL","HIBA"],["RAJAD","AFAF"],["REDA","SYHAM"],["SOUFI","MOHAMED"],["ZEKKAOUI","IHSSAN"]
+            ];
+            // EPL4 Bravo (23)
+            const e4Bravo = [
+                ["ECHBIHI","REDA"],["KHATTA","HAFSA"],["BOUNSIR","RANIA"],["ZAINABI","OTHMANE"],["BENAROUD","YOUSSEF"],["DERRAR","IKRAM"],["MESBAHI","MOHAMED"],["TAHROUCH","MARIA"],["KHABBAZ","KHALID"],["INEFLAS","ABDERRAHMANE"],["BARHRHOUJ","WIAME"],["MOURID","AHLAM"],["BOUCHRAHI","YASSMINE"],["LAMRANI","LINA"],["EL ALAMA","RAYANE"],["EL FAROUKI","AYMAN"],["AZOUGHAGH","WAEL"],["MESSOUDI","MOUAD"],["FITHANE","SARAH"],["SAFI","ALAA"],["OUACHAO","MOHAMMED"],["ABDELLAOUI","SOUFIANE"],["KARIM","YAHYA"]
+            ];
+            // EPL4 Charlie (23)
+            const e4Charlie = [
+                ["Afzagour","Hafsa"],["Ahmid","Youssef"],["Ahouzi","Zakaria"],["Bahir","Hajar"],["Belghiti","Asmae"],["Benabed","Hassan"],["Jamal Eddine","Ibrahim"],["Boughlala","Haitham"],["Bouhzama","Driss"],["Darrag","Fatima Zahra"],["Eddahbi","Oussama"],["El Ouardini","Reda"],["El Rhazoui","Mokhtar"],["Ghouat","Mohamed"],["Guerrab","Wissal"],["Jouahi","Adnane"],["Hanafi","Hamza Souhail"],["Hdouch","Ahmed"],["Laaroussi","Ali"],["Moujoual","Aya"],["Rafei","Adam"],["Wadih","Badr"],["BENHAMMOU","MOHAMMED"]
+            ];
+            // EPL4 Delta (23)
+            const e4Delta = [
+                ["AMALI","ZAKARIAE"],["ASKAOUYIT","YOUSSEF"],["BENBOUCHTA","ABDELADIM"],["BOUAKIL","SALAH"],["CHENTOUF","ABIR"],["EDDAOUDI","SAAD"],["EL ATARI","ADAM"],["ELHASSOUNI","MOURAD"],["EL HIHI","MANAL"],["EL YAAGOUBI","ABELGHANI"],["KARAMI","ADAM"],["KIDARI","RIM"],["MACHCMOURE","ACHRAF"],["NAJI","HAYTHAM"],["OUDDI","MOHAMMED"],["SKALLI","MEHDI"],["TABACHE","WASSIM"],["TAFALI","WAJIH"],["TOUZI","WISSAL"],["ZAD","BASMA"],["BENICHOU","DOAA"],["BOUHRAOUA","ISSAM"],["MERBAH","HOSSAM"]
+            ];
+
+            // EPL5 Alpha (16)
+            const e5Alpha = [
+                ["SMIDI","AMINE"],["LOTF ELILAH","ABDELBASSET"],["ALKALAY","SAAD"],["HAZZOUTE","TARIK"],["BAKKALI","IMRANE"],["RIDA","OUSSAMA"],["BENCHAJIA","MOHAMED REDA"],["GOUCHY","OUSSAMA"],["EL MOUSTARIH","HAFSSA"],["TOURAOUI","MOHAMED"],["LOUEKILI","MEHDI"],["BELRHITI","ABRARE"],["AIT KECHKECH","ANASS"],["AIT BENAALI","AMINE"],["ASSABAA","SAAD"],["BOURRAIS","AFAF"]
+            ];
+            // EPL5 Bravo (21)
+            const e5Bravo = [
+                ["OUKERROU","MOUAAD"],["OUAKAF","EL MEHDI"],["BENCHEKROUN","SALIM"],["MRABT","ZAKARIAE"],["EL OIZANI","ANASS"],["ELHAOUATE","MOHAMED"],["ZOUHRY","WALID"],["TINDOUFTE","MOHAMED TAHA"],["HAJRI","AYA"],["HASSOUNY","AYMAN"],["BERRAHOU","TAHA AHMED"],["AIT BEN HASSI","YOUSSEF AMINE"],["LAAYOUNE","MAJD"],["HAFI","LUKMAN"],["EL GOUTIT","AICHA"],["EL JEMMALI","OUMAIMA"],["BELBARD","ASSMAA"],["SELLAL","BASMA"],["BAKKAL","ANAS"],["LAMINE","MOHAMED BADR"],["MOULABBI","ANAS"]
+            ];
+            // EPL5 Charlie (21)
+            const e5Charlie = [
+                ["AMRHAR","HAITAM"],["BARIZ","ABDESSAMAD"],["EL-ACHIR","TAHA"],["AIT MANSOR","FATIMA EZZAHRA"],["EL MEKHANTAR","AYMANE"],["AL KHARASSANI","ABDELGHANI"],["CHOUIKH","HICHAM"],["RGUIG","KAWTAR"],["MOUHSSINY","KARIM"],["AMELI","AHMED YASSINE"],["SAOUD","KHADIJA"],["BOUMHAIDI","AMINE"],["NAJIHI","ANAS"],["KHALED","FAHD"],["EL IDRISSI BOUZAIDI","HATIM"],["ABBOUR","MOHAMED REDA"],["BRICHA","YOUSSRA"],["MOHAMED ABDOU","SEIF-EDDINE"],["HEDDA","ABDERRAHMANE"],["RAHOUI","YOUSSEF"],["BAMMI","SAFAE"]
+            ];
+
             const batch = db.batch();
-            // ... (ajout des documents)
+            const now = firebase.firestore.FieldValue.serverTimestamp();
+
+            // Ajout EPL3
+            epl3Data.forEach(s => {
+                const id = `e3_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: s.nom, prenom: s.prenom, grade: "EPL3", brigade: null, presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL4 Alpha
+            e4Alpha.forEach(([n,p]) => {
+                const id = `e4a_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL4", brigade: "Alpha", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL4 Bravo
+            e4Bravo.forEach(([n,p]) => {
+                const id = `e4b_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL4", brigade: "Bravo", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL4 Charlie
+            e4Charlie.forEach(([n,p]) => {
+                const id = `e4c_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL4", brigade: "Charlie", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL4 Delta
+            e4Delta.forEach(([n,p]) => {
+                const id = `e4d_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL4", brigade: "Delta", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL5 Alpha
+            e5Alpha.forEach(([n,p]) => {
+                const id = `e5a_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL5", brigade: "Alpha", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL5 Bravo
+            e5Bravo.forEach(([n,p]) => {
+                const id = `e5b_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL5", brigade: "Bravo", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+            // EPL5 Charlie
+            e5Charlie.forEach(([n,p]) => {
+                const id = `e5c_${Date.now()}_${Math.random()}`;
+                const ref = studentsCollection.doc(id);
+                batch.set(ref, { id, nom: n, prenom: p, grade: "EPL5", brigade: "Charlie", presence: "PRESENT", motif: "", created: now, lastModified: now, modifiedBy: deviceId });
+            });
+
             await batch.commit();
-            console.log("Données initiales créées");
+            console.log("Tous les élèves ont été créés dans Firestore.");
         }
 
         function startSync() {
@@ -360,7 +446,7 @@
             });
         }
 
-        // Boutons
+        // Événements des boutons
         document.querySelectorAll(".icon-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 const grade = btn.getAttribute("data-grade");
@@ -402,8 +488,28 @@
             }
         });
         document.getElementById("generateDocBtn").addEventListener("click", () => {
-            // (fonction identique à votre code, je ne la recopie pas ici pour éviter la longueur)
-            alert("Génération du document Word (fonction conservée)");
+            const lieu = lieuInput.value;
+            const date = dateInput.value;
+            const list = [...allStudents];
+            const e3 = list.filter(s=>s.grade==="EPL3");
+            const e4 = list.filter(s=>s.grade==="EPL4");
+            const e5 = list.filter(s=>s.grade==="EPL5");
+            const e3p = e3.filter(s=>s.presence==="PRESENT").length;
+            const e4p = e4.filter(s=>s.presence==="PRESENT").length;
+            const e5p = e5.filter(s=>s.presence==="PRESENT").length;
+            const absents = list.filter(s=>s.presence==="ABSENT");
+            const motifMap = new Map();
+            absents.forEach(a => { let m = a.motif?.trim() || "SANS MOTIF"; if(!motifMap.has(m)) motifMap.set(m,[]); motifMap.get(m).push(`${a.grade} ${a.nom} ${a.prenom}${a.brigade?` (${a.brigade})`:""}`); });
+            let absentRows = "";
+            if(absents.length===0) absentRows = "<tr><td colspan='2'>Aucune absence</td></tr>";
+            else for(const [mot,pers] of motifMap) absentRows += `<tr><td><strong>${mot} (${pers.length})</strong></td><td>${pers.join(" ; ")}</td></tr>`;
+            const docHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Bulletin_Appel_${date}</title><style>body{font-family:'Times New Roman',serif;margin:2.5cm;}table{border-collapse:collapse;width:100%;margin:20px 0;}th,td{border:1px solid #000;padding:6px;}</style></head><body><div style="text-align:right"><p>Lieu : ${lieu}</p><p>Date : ${date}</p></div><h1 style="text-align:center">BULLETIN D'APPEL<br>CIPL</h1><h2>Effectifs</h2><table><thead><tr><th>Promotion</th><th>Effectif</th><th>Présents</th><th>Absents</th></tr></thead><tbody><tr><td>EPL3</td><td>${e3.length}</td><td>${e3p}</td><td>${e3.length-e3p}</td></tr><tr><td>EPL4</td><td>${e4.length}</td><td>${e4p}</td><td>${e4.length-e4p}</td></tr><tr><td>EPL5</td><td>${e5.length}</td><td>${e5p}</td><td>${e5.length-e5p}</td></tr><tr style="font-weight:bold;"><td>TOTAL</td><td>${list.length}</td><td>${list.filter(s=>s.presence==="PRESENT").length}</td><td>${list.filter(s=>s.presence==="ABSENT").length}</td></tr></tbody></table><h2>Absents par motif</h2><table><thead><tr><th>Motif (nb)</th><th>Élèves</th></tr></thead><tbody>${absentRows}</tbody></table><div style="margin-top:60px;"><p>L'OFFICIER DE PERMANENCE : _________________________</p><p>Le COMMANDANT DU CENTRE : _________________________</p></div></body></html>`;
+            const blob = new Blob([docHtml], { type: "application/msword" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `Bulletin_Appel_${date.replace(/\//g,"-")}.doc`;
+            a.click();
+            URL.revokeObjectURL(a.href);
         });
 
         initializeDataIfEmpty().then(() => startSync()).catch(err => console.error("Init error:", err));
