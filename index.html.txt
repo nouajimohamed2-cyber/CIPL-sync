@@ -130,7 +130,7 @@
     (function() {
         // Configuration Firebase (à remplacer par vos propres clés si besoin)
         const firebaseConfig = {
-            apiKey: "AIzaSyCZkaRlj0pplwLwjihsJEAQUPZ5QZKPQoo",
+            apiKey: "AIzaSyAt0bn2Oeu0i2HwRCFb4DLQyTTuVZndJBw",
             authDomain: "cipl-sync.firebaseapp.com",
             projectId: "cipl-sync",
             storageBucket: "cipl-sync.firebasestorage.app",
